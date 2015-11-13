@@ -30,13 +30,13 @@ class Scene(object):
 class Engine(object):
     def __init__(self,scene):
         self.current=scene        
-        self.carrying = []
+        self.carrying = self.current.objects
         self.stage = 1
         self.death = Death()    
 
     def do(self,command):
         if self.stage == 1:
-            if 'back door' in command:
+            if 'back' in command:
                 print " WAW.....Nice Decision"
                 self.current=self.current.out
                 self.stage=2
@@ -62,7 +62,7 @@ class Engine(object):
             else:
                 self.death.message(3)
         elif self.stage == 4 : 
-            if 'room' in command :
+            if 'manager' in command :
                 print '*' * 20
                 print " MISSION  ACCOMPLISHED YOU GOT FULL DAY SALLARY " 
                 print '*' * 20
@@ -95,21 +95,21 @@ class Death(object):
 
 def start():
 
-    box = Object("match box","some one forgot to take after smoking")
-    scene_one = "Bike parking area"
-    des_one = "full of bikes\n two way fron door or back door"
+    box = Object("matchbox","some one forgot to take after smoking")
+    scene_one = "\n\t\tBike Parking area"
+    des_one = "In front of office building , old economy vehicles ,No super bike with 900 cc  ..Roof may collapse at any moment ,Two way to office , front door which straight leads to managers room , back door which leads to Narrow Passage anyone noticing that passage *  "
     bike_parking = Scene(scene_one ,des_one,[box])
     
-    scene_two = "back room"
-    des_two = "naroow varantha , toilet on the left side, \n OMG manger is coming ...you will loos your halfday sallry if she see you "
+    scene_two = "\n\t\tNarrow Passage"
+    des_two = "Narrow passage which reaches to staff room. old files are kept in corners .. just like a usual government office . ..just remember 1960 Bollywood films. toilet is in the Left side.Be careful about your shoes so that its sound won't cheat u  ..look at your watch.time is running such a fast ... Oooff . aaaah .that mouse may destroy my life . god !I am just escaped. OMG......! Managers coming toward me from opposite side , you have two option Just say 'Hello good morning' with a Closeup Smile to manager or HIDE in the toilet .......|"
     back_room = Scene ( scene_two , des_two)
     
-    scene_tree = "toilet "
-    des_tree = " fire alarm  triger or open door"
+    scene_tree = "\n\t\tToilet "
+    des_tree = " Awful smell , creepy spiders i hate them most  :(.. where are these  sweepers ? Next day must complaint about them . Fire alarm on the top left corner ...how can i escape from here ..yaaaa... Got an idea 'TRIGGER FIRE ALARM'  every one will run towards ground and I can easily put sign in register"
     toilet = Scene (scene_tree, des_tree)
 
-    scene_four = "alarm "
-    des_four = "go to manager room or runn to ground "
+    scene_four = "\n\t\tAlarm Running"
+    des_four = "[keeeeeyeeee..keeeeeyeeeeee......] ... sound is not too loud ..curruption in alarm also.. Any way plan worked .. every one running from building ...Now got to 'MANAGER'/' room or stay in toilet  and loose half day Sallary "
     alarm = Scene(scene_four, des_four)
 
     bike_parking.out = back_room
@@ -122,8 +122,14 @@ def start():
 
 
 if __name__ == '__main__':
-    print " Welcome to mission msp "
-    print "*" * 20
+    print "\t\t Welcome to miSsiOn MsP "
+    print "*" * 60
+    print  ''' No hero with Bazuka, no villain with neutron emitter , only  AleX with a matchBox.Alex Lazy Government Employe with Zero casual leave in his  credit , As usual  reached office at 10.30 AM .. of course 30 mnt late .. Now oua mission is to save his Half day salary by signing in attendance register without noticing no one .  Activate ua stealth mode and go trough back door hide in toilet , trigger the fire alarm using matchbox and go to manager's room '''
+
+    print "\n\t\tSTART GAME"
+    print "*" * 60
+
+
     start = start()
 
     while True:
@@ -132,9 +138,6 @@ if __name__ == '__main__':
         print """"""
         command = raw_input (" what you gonna do ?")
         start.do(command)
-
-
-
 
 
 
