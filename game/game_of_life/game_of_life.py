@@ -14,10 +14,7 @@ def generate_grid():
              [0,0,1,0]]
     return grid
 
-def desplay(grid):
-    for i in grid:
-        for j in i:
-            print grid[i][j]
+
 
 def count_neighbour(grid,x,y):
     count = 0
@@ -50,3 +47,12 @@ def next_generation(grid):
 
     
     
+
+def main():
+    grid = generate_grid()
+    print next_generation(grid)
+     
+
+
+if __name__ == "__main__":
+    main()
