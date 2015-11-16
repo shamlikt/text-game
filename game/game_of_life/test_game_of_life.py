@@ -1,5 +1,6 @@
 import game_of_life
 
+
 def test_isalive():
     grid = [[0,0,0,0],
             [0,0,0,0],
@@ -53,6 +54,29 @@ def test_count_neighbour():
     assert count14 == 1
     assert count15 == 2
     assert count16 == 0
+
+
+def test_next_generation():
+    
+    grid =[[1,1,1,1],
+            [1,1,1,1],
+            [1,1,1,1],
+            [1,1,1,1]]
+ 
+    grid1 = [[0,0,1,0],
+             [0,0,1,0],
+             [0,0,1,0],
+             [0,0,1,0]]
+             
+
+    new_life = game_of_life.next_generation(grid)
+    new_life1 = game_of_life.next_generation(grid1)
+    
+    assert new_life == [[1,0,0,1],[0,0,0,0],[0,0,0,0],[1,0,0,1]]
+    assert new_life1 == [[0,0,0,0],[0,1,1,1],[0,1,1,1],[0,0,0,0]]
+    
+
+
 
 
     
