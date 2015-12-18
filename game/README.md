@@ -1,2 +1,1 @@
-http://shamlikme.tumblr.com/post/135437094182
-<img src="http://shamlikme.tumblr.com/post/135437094182" width="500" />
+![Demo](http://s17.postimg.org/m6v6kaa73/ezgif_com_resize.gif)
